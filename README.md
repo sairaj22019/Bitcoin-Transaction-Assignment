@@ -45,7 +45,7 @@ bitcoind -regtest -daemon
 bitcoind.exe -regtest
 ```
 #### **Note**
-If running `bitcoind --version` on the command prompt does not display the version, and you have installed the bitcoin core, make sure to add it inside the **path in environment variables**. The default path is `C:\Program Files\Bitcoin\daemon`. Once this has been added, restart your application and test again.
+If running `bitcoind --version` on the command prompt does not display the version, and you have installed the bitcoin core, make sure to add it inside the **path in environment variables**. The default path is `C:\Program Files\Bitcoin\daemon`. Once this has been added, restart the command prompt and test again. If correctly setup, it should now display the version number appropriately.
 
 
 ### 2. Running the Scripts
@@ -75,7 +75,6 @@ This handles the creation, signing, and broadcasting of P2SH-wrapped SegWit tran
 - **Script Execution**: In a Legacy P2PKH transaction, the response script (`scriptSig`) provides the user's cryptographic `<Signature>` and `<Public Key>`. The challenge script (`scriptPubKey`) validates this by running `OP_DUP` to duplicate the public key, and `OP_HASH160` to hash it , followed by `OP_EQUALVERIFY` and `OP_CHECKSIG`.
 
 
-
 ### Part 2: SegWit P2SH-P2WPKH Transactions
 
 - **Workflow**: Generates three new addresses (A', B', and C'), explicitly specifying the `p2sh-segwit` format. Bitcoins are sent Address A' by mining new blocks to it to avoid mixing with legacy UTXOs.
@@ -102,4 +101,5 @@ This handles the creation, signing, and broadcasting of P2SH-wrapped SegWit tran
 
 - **Resolving Transaction Malleability**: In Legacy transactions, signatures are part of the `scriptSig` and are hashed to generate the TXID, making them susceptible to third-party malleability. SegWit resolves this by separating the signatures into the `txinwitness` array, removing them from the TXID hash calculation. This allows Layer 2 scaling solutions like the Lightning Network to function safely.
 
-### Due to force push our commits have been erased,you can check our contribution heat map in our profiles
+### Due to force pushing commits, our commits have been erased. You can check our contribution heat map in our profiles. 
+
