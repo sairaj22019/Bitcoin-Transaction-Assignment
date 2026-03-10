@@ -101,3 +101,5 @@ This handles the creation, signing, and broadcasting of P2SH-wrapped SegWit tran
 - **Witness Discount & Fee Reduction**: Although the SegWit transaction is physically larger (247 bytes vs 225 bytes) due to the P2SH wrapper, its virtual size is much smaller (166 vbytes vs 225 vbytes). This is because SegWit applies a 75% discount to the signature data stored in the `txinwitness` array. This mathematical reduction results in ~26% decrease on transaction fees for the user.
 
 - **Resolving Transaction Malleability**: In Legacy transactions, signatures are part of the `scriptSig` and are hashed to generate the TXID, making them susceptible to third-party malleability. SegWit resolves this by separating the signatures into the `txinwitness` array, removing them from the TXID hash calculation. This allows Layer 2 scaling solutions like the Lightning Network to function safely.
+
+### Due to force push our commits have been erased,you can check our contribution heat map in our profiles
