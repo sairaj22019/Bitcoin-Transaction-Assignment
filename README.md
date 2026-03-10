@@ -45,7 +45,7 @@ bitcoind -regtest -daemon
 bitcoind.exe -regtest
 ```
 #### **Note**
-If running `bitcoind --version` on the command prompt does not display the version, and you have installed the bitcoin core, make sure to add it inside the **path in environment variables**. The default path is `C:\Program Files\Bitcoin\daemon`. Once this has been added, restart the command prompt and test again. If correctly setup, it should now display the version number appropriately.
+If running `bitcoind --version` on the command prompt does not display the version, and you have installed the bitcoin core, make sure to add it inside the **path in environment variables**. The default path is `C:\Program Files\Bitcoin\daemon`. Once this has been added, restart the command prompt and test again. If correctly set up, it should now display the version number appropriately.
 
 
 ### 2. Running the Scripts
@@ -80,7 +80,7 @@ This handles the creation, signing, and broadcasting of P2SH-wrapped SegWit tran
 - **Workflow**: Generates three new addresses (A', B', and C'), explicitly specifying the `p2sh-segwit` format. Bitcoins are sent Address A' by mining new blocks to it to avoid mixing with legacy UTXOs.
 
 
-- **Transactions**: Similar to Part 1, bitcoins are sequentially transferred from Address A' to B', and then from B' to C'.
+- **Transactions**: Works the same as Part 1, bitcoins are sequentially transferred from Address A' to B', and then from B' to C'.
 
 
 - **Script Execution**: The heavy cryptographic signatures are removed from the main script. The response script (`scriptSig`) only contains a lightweight `<Witness Program>`. The actual `<Signature>` and `<Public Key>` are stored in the separated `txinwitness` structure.
@@ -102,4 +102,5 @@ This handles the creation, signing, and broadcasting of P2SH-wrapped SegWit tran
 - **Resolving Transaction Malleability**: In Legacy transactions, signatures are part of the `scriptSig` and are hashed to generate the TXID, making them susceptible to third-party malleability. SegWit resolves this by separating the signatures into the `txinwitness` array, removing them from the TXID hash calculation. This allows Layer 2 scaling solutions like the Lightning Network to function safely.
 
 ### Due to force pushing commits, our commits have been erased. You can check our contribution heat map in our profiles. 
+
 
