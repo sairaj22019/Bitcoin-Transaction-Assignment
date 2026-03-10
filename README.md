@@ -1,4 +1,4 @@
-# CS 216: Bitcoin Transaction Lab Assignment
+# CS 216: Bitcoin Transaction Assignment
 
 ## Team Information
 | Name | Roll No. |
@@ -102,5 +102,6 @@ This handles the creation, signing, and broadcasting of P2SH-wrapped SegWit tran
 - **Resolving Transaction Malleability**: In Legacy transactions, signatures are part of the `scriptSig` and are hashed to generate the TXID, making them susceptible to third-party malleability. SegWit resolves this by separating the signatures into the `txinwitness` array, removing them from the TXID hash calculation. This allows Layer 2 scaling solutions like the Lightning Network to function safely.
 
 ### Due to force pushing commits, our commits have been erased. You can check our contribution heat map in our profiles. 
+
 
 
